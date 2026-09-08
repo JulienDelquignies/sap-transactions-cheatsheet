@@ -57,7 +57,7 @@ d'écarts entre recette et production. Vérifier la classe de livraison de la ta
 | `LSMW` | Reprise de données classique : lecture de fichier, mapping, génération de batch input / d'appels BAPI. Ancien, complet, toujours utilisé. Absent ou déconseillé sur S/4 récent |
 | **Migration Cockpit** (`LTMC`, puis `LTMOM` pour l'objet) | Le successeur sur S/4HANA. Modèles XLSX fournis par SAP, mapping guidé |
 | `SCAT` / `eCATT` (`SECATT`) | Rejouer des transactions à partir d'un jeu de données. Utile pour les tests autant que pour la reprise |
-| `SM35` (batch input) | Le mécanisme sous-jacent de beaucoup de chargements. Voir la [fiche jobs](04-jobs-et-batch.md) |
+| `SM35` (batch input) | Le mécanisme sous-jacent de beaucoup de chargements. Voir la [fiche jobs](03-jobs-et-batch.md) |
 | BAPI / API OData | La bonne réponse dès qu'un chargement doit être répété ou automatisé |
 
 ### La règle qui évite les catastrophes
