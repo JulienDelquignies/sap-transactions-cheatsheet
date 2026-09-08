@@ -13,10 +13,10 @@ majorité des situations où on ne sait pas par où commencer.
 | 6 | `SM21` | « Que s'est-il passé sur le serveur à cette heure-là ? » | Ce que `ST22` ne montre pas |
 | 7 | `SLG1` | « Le métier a-t-il rejeté quelque chose ? » | Le journal que personne ne regarde, et qui contient la vraie erreur |
 | 8 | `SM37` | « Le job a-t-il tourné, et qu'a-t-il dit ? » | Presque tout ce qui compte tourne en batch |
-| 9 | `SM58` | « Mon appel asynchrone est-il passé ? » | Le premier écran de toute interface bloquée |
-| 10 | `SMQ2` | « Ma file d'attente est-elle bloquée ? » | Une seule entrée en erreur bloque tout le reste |
-| 11 | `SM59` | « Ce système parle-t-il encore à l'autre ? » | Le test de connexion tranche en dix secondes |
-| 12 | `WE02` | « Où est passé mon IDoc ? » | L'échange le plus répandu du monde SAP |
+| 9 | `SM58` | « Mon appel asynchrone est-il passé ? » | Le message d'erreur y est lisible sans outil supplémentaire |
+| 10 | `SM59` | « Ce système parle-t-il encore à l'autre ? » | Le test de connexion tranche en dix secondes |
+| 11 | `SM13` | « Le document a-t-il vraiment été créé ? » | Le journal qui explique les disparitions quand tout est vert ailleurs |
+| 12 | `/h` | Entrer dans le débogueur | Ce n'est pas une transaction, c'est le réflexe qui remplace vingt suppositions |
 | 13 | `SU53` | « Est-ce un problème de droits ? » | À lancer immédiatement après l'échec |
 | 14 | `ST05` | « Que fait vraiment ce programme ? » | La seule mesure objective en performance |
 | 15 | `SE09` | « Qu'y a-t-il dans ce transport ? » | À regarder avant de libérer, pas après l'import |
@@ -25,7 +25,8 @@ majorité des situations où on ne sait pas par où commencer.
 
 - **`/n` + code** : ouvrir une transaction en abandonnant l'écran courant.
   **`/o` + code** : l'ouvrir dans une nouvelle session. **`/h`** : activer le
-  débogueur pour l'action suivante.
+  débogueur pour l'action suivante — voir la fiche
+  [Débogage](scenarios/06-debogage-et-edition-de-table.md).
 - **F1 sur un champ → Informations techniques** : le nom réel de la table et du champ
   derrière l'écran. Le réflexe le plus rentable de tout SAP.
 - **Système → Statut** : le programme, la transaction, le mandant, la version, le
@@ -36,6 +37,10 @@ majorité des situations où on ne sait pas par où commencer.
 
 **Avant d'agir, savoir où on est.** *Système → Statut*. Le nombre d'incidents causés
 par une action juste faite dans le mauvais mandant est considérable.
+
+**Avant de modifier quoi que ce soit, noter l'état avant.** Un export, une capture, un
+numéro de document. Trente secondes, et c'est ce qui distingue une correction d'un
+incident.
 
 **Après un échec, noter l'heure exacte.** Tous les journaux se cherchent par plage
 horaire. Une fenêtre de dix minutes fait la différence entre quatre lignes à lire et

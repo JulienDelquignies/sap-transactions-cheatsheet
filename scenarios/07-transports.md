@@ -66,9 +66,6 @@ on a paramétré dans le mauvais mandant.
 
 - **Variantes de programmes** (transportables via `SE38` → *Utilitaires → Variantes*,
   ou le programme `RSTRANSP`).
-- **Systèmes logiques et modèles de distribution** ALE (`BD54`, `BD64`).
-- **Profils partenaires IDoc** (`WE20`) — souvent volontairement non transportés,
-  car spécifiques à chaque environnement. À reparamétrer manuellement, en le sachant.
 - **Destinations RFC** (`SM59`) — jamais transportées, et c'est voulu : les mots de
   passe et les hôtes diffèrent par environnement.
 - **Jobs planifiés** — se recréent dans chaque système.

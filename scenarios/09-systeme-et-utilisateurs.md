@@ -63,14 +63,13 @@ La liste des actions oubliées, qui produisent des symptômes déroutants :
    d'envoi de facture qui tourne sur une copie de test envoie de vraies factures.
 3. `SCOT` — la configuration mail. Même risque : envoi réel depuis un environnement
    de test.
-4. `WE20` / `WE21` — profils partenaires et ports IDoc.
-5. `SECSTORE` — les entrées du magasin sécurisé sont chiffrées avec une clé liée au
+4. `SECSTORE` — les entrées du magasin sécurisé sont chiffrées avec une clé liée au
    système ; après copie, elles doivent être régénérées.
-6. `STRUST` — certificats liés au nom d'hôte.
-7. `SLICENSE` — nouvelle clé de licence.
-8. `SICK` — contrôle d'installation.
+5. `STRUST` — certificats liés au nom d'hôte.
+6. `SLICENSE` — nouvelle clé de licence.
+7. `SICK` — contrôle d'installation.
 
-Le point 1, 2 et 3 sont les trois qui, ensemble, causent la quasi-totalité des
+Les points 1, 2 et 3 sont ceux qui, ensemble, causent la quasi-totalité des
 incidents « le système de test a écrit chez le client ». Ils se traitent avant
 d'ouvrir le système aux utilisateurs, pas après.
 

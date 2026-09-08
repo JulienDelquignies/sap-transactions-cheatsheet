@@ -57,8 +57,11 @@ sont verts, c'est presque toujours ici.
 
 ## 4. `SM13` — 🔍✏️ les mises à jour terminées en erreur
 
-Voir la [fiche interface](01-interface-bloquee.md#le-piège-n1). C'est le journal
-qu'on oublie, et celui qui explique les disparitions inexpliquées de documents.
+**Le piège que ce journal résout.** Un traitement peut se terminer « avec succès »
+côté appelant et échouer ensuite dans la tâche de mise à jour asynchrone. Résultat :
+aucune erreur nulle part sauf dans `SM13`, et le document n'existe pas. Quand tout a
+l'air vert et que la donnée n'est pas là, regardez `SM13` avant de conclure au
+problème réseau.
 
 ## Aller plus loin
 
@@ -66,10 +69,12 @@ qu'on oublie, et celui qui explique les disparitions inexpliquées de documents.
 |---|---|---|
 | `ST05` | Trace SQL / RFC / buffer / HTTP. Pour voir *ce que le programme fait vraiment* | 🔍 |
 | `STAUTHTRACE` | Trace d'autorisations (remplace `ST01` pour ce besoin) | 🔍 |
+| `SM58` | Appels RFC asynchrones en attente ou en erreur — le message d'erreur y est lisible | 🔍✏️ |
+| `SMQ1` / `SMQ2` | Files d'attente qRFC sortantes / entrantes. Une entrée en erreur bloque tout ce qui suit | ⚠️ |
+| `SM59` | Destinations RFC — le *Test de connexion* tranche en dix secondes | 🔍⚠️ |
 | `SAT` | Analyse d'exécution ABAP (successeur de `SE30`) — où le temps est passé | 🔍 |
 | `SM12` | Verrous en cours. Un verrou orphelin = un traitement figé sans erreur | ⚠️ |
 | `SM50` / `SM66` | Processus de travail : voir en direct ce qui tourne et sur quoi ça bloque | 🔍 |
-| `/IWFND/ERROR_LOG` | Erreurs Gateway — invisibles ailleurs | 🔍 |
 | `SLGD` | Suppression de logs applicatifs (variante de `SLG2`) | ⚠️ |
 
 ## Méthode, quand on n'a rien
@@ -82,3 +87,6 @@ qu'on oublie, et celui qui explique les disparitions inexpliquées de documents.
    seulement arrivé ?).
 4. Si le traitement a bien tourné et n'a rien fait : c'est une sélection vide, pas
    une erreur. Rejouer le même programme avec les mêmes paramètres et un `ST05` actif.
+5. Si le message d'erreur est connu mais son origine non : point d'arrêt sur
+   l'instruction `MESSAGE` dans le débogueur. Voir la fiche
+   [Débogage](06-debogage-et-edition-de-table.md).

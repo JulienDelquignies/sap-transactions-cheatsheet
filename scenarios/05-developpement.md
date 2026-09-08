@@ -96,12 +96,16 @@ développement), ou une vue CDS / un rapport dédié si le besoin est récurrent
 
 ## Débogage : le minimum utile
 
+> La fiche [Débogage et édition de table](06-debogage-et-edition-de-table.md) traite
+> le sujet en entier, avec les règles d'usage. Résumé ici.
+
 - `/h` dans la zone de commande active le débogueur pour l'action suivante.
 - **Point d'arrêt sur instruction** : dans le débogueur, *Points d'arrêt → Instruction
   ABAP*, puis par exemple `MESSAGE` pour s'arrêter à l'endroit exact où le message
   d'erreur est émis. C'est la technique la plus rapide pour retrouver l'origine d'un
   message dont on ne connaît que le texte.
-- **Point d'arrêt sur module fonction** : pour intercepter un appel RFC entrant.
+- **Point d'arrêt sur module fonction** : pour intercepter un appel RFC entrant, ou
+  un appel dont on ne connaît que le nom du module.
 - **Watchpoint** : s'arrêter quand une variable change de valeur. Le seul moyen
   raisonnable de trouver « qui écrase mon champ ».
 - Débogage en arrière-plan : `SM50` → sélectionner le processus → *Programme/Mode →
